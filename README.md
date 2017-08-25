@@ -26,26 +26,29 @@ LoaderButton React component
     $ npm init
     $ npm install @mitchallen/react-loader-button --save
   
-* * *
 
 ## Usage
 
-1: Add this line near the top of your file (like ```src/App.js```):
+Add this line near the top of your file (like ```src/App.js```):
 
 ```
 import LoaderButton from '@mitchallen/react-loader-button';
 ```
 
-__NOTE:__ LoaderButton must be Capitalized or component won't render.
+See the example below for more information on how to integrate with your application.
 
-2: Somewhere in the middle of the __render__ method add this line:
+## Reference
 
-```
-<LoaderButton />
-```
-* * *
+This component is based on code found in this chapter of an online tutorial:
 
-## Simple Test
+* http://serverless-stack.com/chapters/give-feedback-while-logging-in.html
+
+The table of contents for that tutorial can be found here:
+
+* http://serverless-stack.com/#table-of-contents
+
+
+## Usage example
 
 ```
 $ create-react-app react-loader-button-test
@@ -54,7 +57,32 @@ $ npm install @mitchallen/react-loader-button --save
 $ npm install --save material-ui
 ```
 
-### Modify src/App.js
+#### Modify src/index.css
+
+Add these styles:
+
+```
+.spinning.glyphicon {
+  margin-right: 7px;
+  top: 2px;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1) rotate(360deg); }
+}
+```
+
+
+#### Modify public/index.html
+
+Add this line to the ```<head>``` section:
+
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+```
+
+#### Modify src/App.js
 
 ```
 import React, { Component } from 'react';
@@ -193,6 +221,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.2
+
+* Updated documentation
 
 #### Version 0.1.1
 
