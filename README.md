@@ -43,7 +43,122 @@ __NOTE:__ LoaderButton must be Capitalized or component won't render.
 ```
 <LoaderButton />
 ```
+* * *
 
+## Simple Test
+
+```
+$ create-react-app react-loader-button-test
+$ cd react-number-loader-button-test/
+$ npm install @mitchallen/react-loader-button --save
+$ npm install --save material-ui
+```
+
+### Modify src/App.js
+
+```
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+// Must include MuiThemeProvider!
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import LoaderButton from '@mitchallen/react-loader-button';
+
+class App extends Component {
+  render() {
+    return (
+      <MuiThemeProvider>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Welcome to React</h2>
+          </div>
+          <p className="App-intro">
+            To get started, edit <code>src/App.js</code> and save to reload.
+          </p>
+          <h4>
+            primary, disabled, isloading:
+          </h4>
+          <LoaderButton
+            primary
+            disabled={ true }
+            type='submit'
+            isLoading={ true }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            primary, disabled = false, isloading:
+          </h4>
+          <LoaderButton
+            primary
+            disabled={ false }
+            type='submit'
+            isLoading={ true }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            disabled, isloading:
+          </h4>
+          <LoaderButton
+            disabled={ true }
+            type='submit'
+            isLoading={ true }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            primary, disabled = false, isloading = false:
+          </h4>
+          <LoaderButton
+            primary
+            disabled={ false }
+            type='submit'
+            isLoading={ false }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            disabled = false, isloading = false:
+          </h4>
+          <LoaderButton
+            disabled={ false }
+            type='submit'
+            isLoading={ false }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            primary, disabled, isloading = false:
+          </h4>
+          <LoaderButton
+            primary
+            disabled={ true }
+            type='submit'
+            isLoading={ false }
+            text='Signup'
+            loadingText='Signing up …' />
+          <h4>
+            disabled, isloading = false:
+          </h4>
+          <LoaderButton
+            disabled={ true }
+            type='submit'
+            isLoading={ false }
+            text='Signup'
+            loadingText='Signing up …' />
+        </div>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default App;
+
+```
+
+Run the app
+
+```
+npm start
+```
 
 * * *
 
@@ -53,58 +168,10 @@ __NOTE:__ LoaderButton must be Capitalized or component won't render.
 
 To test, go to the root folder and type (sans __$__):
 
-    $ npm test
+```
+$ npm test
+```
     
-## Component Testing
-
-### Prerequisite
-
-If you've never installed __create-react-app__ (you may need to use ```sudo```):
-
-```
-$ npm install -g create-react-app
-```
-
-### Create a local npm link
-
-In the original component folder (you may need to use ```sudo```):
-
-```
-$ npm link
-```
-
-### Create a test package
-
-Create a root test folder and then do the following:
-
-```
-$ create-react-app react-loader-button-test
-$ cd react-loader-button-test
-$ npm link @mitchallen/react-loader-button
-```
-
-### Modify src/App.js
-
-1: Add this line near the top:
-
-```
-import LoaderButton from '@mitchallen/react-loader-button';
-```
-
-__NOTE:__ LoaderButton must be Capitalized or component won't render.
-
-2: Somewhere in the middle of the __render__ method add this line:
-
-```
-<LoaderButton />
-```
-
-### Run The Test App
-
-```
-$ npm start
-```
-
 ### Cleanup
 
 Remember to unlink when done.
@@ -126,6 +193,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.1
+
+* Updated documentation
 
 #### Version 0.1.0 
 
