@@ -28,8 +28,6 @@ const Indicator = (
         size={40}
         left={0}
         top={0}
-        value={90}
-        mode="indeterminate"
         status="loading"
         style={indicatorStyle.refresh}
       />
