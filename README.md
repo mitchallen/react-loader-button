@@ -57,31 +57,6 @@ $ npm install @mitchallen/react-loader-button --save
 $ npm install --save material-ui
 ```
 
-#### Modify src/index.css
-
-Add these styles:
-
-```
-.spinning.glyphicon {
-  margin-right: 7px;
-  top: 2px;
-  animation: spin 1s infinite linear;
-}
-@keyframes spin {
-  from { transform: scale(1) rotate(0deg); }
-  to { transform: scale(1) rotate(360deg); }
-}
-```
-
-
-#### Modify public/index.html
-
-Add this line to the ```<head>``` section:
-
-```
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-```
-
 #### Modify src/App.js
 
 ```
@@ -221,6 +196,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.3
+
+* Removed react-bootstrap dependency
+* Spinning button indicator now comes from material-ui
 
 #### Version 0.1.2
 

@@ -6,13 +6,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Glyphicon } from 'react-bootstrap';
+import RefreshIndicator from 'material-ui/RefreshIndicator';
+import CircularProgress from 'material-ui/CircularProgress';
+
+const indicatorStyle = {
+    container: {
+      position: 'relative',
+    },
+    refresh: {
+      display: 'inline-block',
+      position: 'relative',
+    },
+  };
+
+const CircleIndicator = (
+  <CircularProgress size={25} thickness={3} />
+);
+
+const Indicator = (
+    <RefreshIndicator
+        size={40}
+        left={0}
+        top={0}
+        value={90}
+        mode="indeterminate"
+        status="loading"
+        style={indicatorStyle.refresh}
+      />
+);
 
 const LoaderButton = ({ isLoading, text, loadingText, disabled = false, ...props }) => (
-    <RaisedButton  {...props}
+  <RaisedButton  {...props}
      label={ !isLoading ? text : loadingText }  
      disabled={ disabled || isLoading } 
-     icon={ isLoading && <Glyphicon glyph='refresh' className='spinning' />}
+     icon={ isLoading && CircleIndicator  }
     />
 );
 
