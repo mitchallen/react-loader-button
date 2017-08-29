@@ -197,6 +197,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.6
+
+* installed eslint to local dev dependencies
+* react now exists only as a peer dependency
+
 #### Version 0.1.5
 
 * Added examples folder and example
