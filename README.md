@@ -197,6 +197,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.7
+
+* added ```run: yarn add react``` to ```.circleci/config.yml```
+
 #### Version 0.1.6
 
 * installed eslint to local dev dependencies
